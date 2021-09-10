@@ -1,0 +1,87 @@
+.container {
+  background: #182849;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.exercise_box {
+  background: #ffffff;
+  max-width: 960px;
+  border-radius: 20px;
+  width: 100%;
+  position: absolute;
+  top: -80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 80px 40px;
+}
+
+.exercise_title {
+  font-size: 2.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.tab_list {
+  list-style-type: none;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 2.75rem;
+}
+
+.tab_item {
+  margin-right: 1px;
+}
+
+.tab_item:last-of-type {
+  margin-right: 0;
+}
+
+.tab_link {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  padding: 10px 20px;
+}
+
+.tab_link::after {
+  display: inline-block;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background-color: #80334b;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.tab_link:hover::after,
+.tab_link.active::after {
+  opacity: 1;
+}
+
+.exercise_content {
+  display: flex;
+}
+
+.exercise_content img {
+  max-width: 409px;
+  margin-right: 6.25rem;
+}
+
+.exercise_text {
+  align-self: center;
+}
+
+.exercise_text h3 {
+  font-size: 1.375rem;
+  margin-bottom: 2rem;
+}
+
+.exercise_text p {
+  font-size: 1rem;
+}
