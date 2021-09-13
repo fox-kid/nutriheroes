@@ -1,0 +1,33 @@
+.wrapper {
+  text-transform: capitalize;
+  font-size: 12px;
+  margin-right: 4rem;
+}
+
+.wrapper:last-of-type {
+  margin-right: 0;
+}
+
+h5 {
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.wrapper ul {
+  list-style-type: none;
+}
+
+.wrapper ul li {
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.wrapper a {
+  text-decoration: none;
+  color: #676069;
+  transform: all 0.2s;
+}
+
+.wrapper a:hover {
+  color: #130513;
+}
