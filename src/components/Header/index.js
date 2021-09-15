@@ -4,6 +4,7 @@ import ROUTES from "../../config/routes";
 import styles from "./Header.module.css";
 import logo from "../../images/logo_header.png";
 import hamburger from "../../images/hamburger_menu.png";
+import hamburger_white from "../../images/hamburger_menu_white.png";
 import { useState } from "react";
 
 function Header() {
@@ -48,10 +49,15 @@ function Header() {
           </ul>
         </nav>
         <button
-          className={styles.hamburger}
+          className={`${styles.hamburger} ${
+            isActive ? styles.active : styles.inactive
+          }`}
           onClick={() => setIsActive((isActive) => !isActive)}
         >
-          <img src={hamburger} alt="hamburger_menu" />
+          <img
+            src={`${isActive ? hamburger_white : hamburger}`}
+            alt="hamburger_menu"
+          />
         </button>
         {isActive ? (
           <nav className={styles.nav}>

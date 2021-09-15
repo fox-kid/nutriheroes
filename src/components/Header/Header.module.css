@@ -105,6 +105,15 @@ nav a:hover::after {
     height: 24px;
     width: 24px;
     z-index: 30;
+    border: none;
+  }
+
+  .inactive {
+    background: #ffffff;
+  }
+
+  .active {
+    background: #182849;
   }
 
   .hamburger img {
@@ -134,6 +143,7 @@ nav a:hover::after {
 
   .nav a {
     color: #ffffff;
+    text-transform: capitalize;
   }
 
   .nav ul li {

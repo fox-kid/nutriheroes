@@ -8,6 +8,7 @@
 .nutrition_box {
   padding: 90px 0 110px;
   max-width: 1004px;
+  width: 100%;
   color: #ffffff;
   display: flex;
 }
@@ -81,4 +82,10 @@
   margin-top: 2rem;
   cursor: pointer;
   width: fit-content;
+}
+
+@media (max-width: 800px) {
+  .nutrition_box {
+    flex-direction: column;
+  }
 }
