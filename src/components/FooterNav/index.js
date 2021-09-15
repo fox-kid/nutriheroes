@@ -8,7 +8,7 @@ function FooterNav({ header, links }) {
       <ul>
         {links.map((link) => (
           <li key={link}>
-            <Link>{link}</Link>
+            <Link to="#link">{link}</Link>
           </li>
         ))}
       </ul>
