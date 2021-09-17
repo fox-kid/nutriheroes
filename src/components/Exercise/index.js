@@ -3,7 +3,13 @@ import gym_img from "../../images/gym_img.png";
 
 function Exercise() {
   return (
-    <section className={styles.container}>
+    <section
+      className={styles.container}
+      title="Exercise"
+      // subtitle={smth}
+      dark={true}
+      id="exercise"
+    >
       <div className={styles.exercise_box}>
         <div className={styles.exercise_title}>Exercise</div>
         <div className={styles.nav}>

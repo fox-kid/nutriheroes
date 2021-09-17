@@ -1,6 +1,7 @@
-import { NavLink, Link } from "react-router-dom";
+// import { NavLink, NavLink } from "react-router-dom";
 import { useState } from "react";
-// import Scroll from "react-scroll";
+import { Link as NavLink } from "react-scroll";
+import { Link } from "react-router-dom";
 
 import ROUTES from "../../config/routes";
 import styles from "./Header.module.css";
@@ -14,38 +15,73 @@ function Header() {
   return (
     <header>
       <div className={styles.container}>
-        <Link to={ROUTES.ROUTE_DASHBOARD}>
-          <img src={logo} alt="nutriheroes_logo" />
-        </Link>
+        <NavLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
+          <Link to={ROUTES.ROUTE_DASHBOARD}>
+            <img src={logo} alt="nutriheroes_logo" />{" "}
+          </Link>
+        </NavLink>
         <nav>
           <ul>
             <li>
-              <NavLink to="#Exercise">Exercise</NavLink>
-            </li>
-            <li>
-              <NavLink to={ROUTES.ROUTE_DASHBOARD}>Nutrition</NavLink>
-            </li>
-            <li>
-              <NavLink to={ROUTES.ROUTE_DASHBOARD}>Expertise</NavLink>
-            </li>
-            <li>
-              <NavLink to={ROUTES.ROUTE_DASHBOARD}>App</NavLink>
+              <NavLink
+                activeClass="active"
+                to="exercise"
+                spy={true}
+                smooth={true}
+                offset={-160}
+                duration={500}
+              >
+                <Link to={ROUTES.ROUTE_DASHBOARD}>Exercise</Link>
+              </NavLink>
             </li>
             <li>
               <NavLink
+                activeClass="active"
+                to="nutrition"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <Link to={ROUTES.ROUTE_DASHBOARD}>Nutrition</Link>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClass="active"
+                to="expertise"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <Link to={ROUTES.ROUTE_DASHBOARD}>Expertise</Link>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                activeClass="active"
+                to="app"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <Link to={ROUTES.ROUTE_DASHBOARD}>App</Link>
+              </NavLink>
+            </li>
+            <li>
+              <Link
                 to={ROUTES.ROUTE_SIGN_UP}
                 className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
               >
                 Sign Up
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink
-                to={ROUTES.ROUTE_LOGIN}
-                className={styles.text_capitalize}
-              >
+              <Link to={ROUTES.ROUTE_LOGIN} className={styles.text_capitalize}>
                 Login
-              </NavLink>
+              </Link>
             </li>
           </ul>
         </nav>

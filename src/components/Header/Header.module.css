@@ -23,6 +23,10 @@ header {
   align-items: center;
 }
 
+.container a {
+  cursor: pointer;
+}
+
 nav ul {
   list-style-type: none;
   display: flex;
@@ -47,6 +51,7 @@ nav a {
   padding: 0.5rem 1rem;
   text-transform: uppercase;
   position: relative;
+  cursor: pointer;
 }
 
 .text_capitalize {

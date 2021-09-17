@@ -5,7 +5,7 @@ import styles from "./Home.module.css";
 
 function Home() {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} title="Home" dark={true} id="home">
       <div className={styles.home_content}>
         <div className={styles.home_text}>
           <h1>Captivating Header Goes Here!</h1>

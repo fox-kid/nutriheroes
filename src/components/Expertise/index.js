@@ -4,7 +4,12 @@ import expertise_cooking from "../../images/expertise_cooking.png";
 
 function Expertise() {
   return (
-    <section className={styles.container}>
+    <section
+      className={styles.container}
+      title="Expertise"
+      dark={true}
+      id="expertise"
+    >
       <div className={`${styles.expertise_box} ${styles.top}`}>
         <div className={styles.img_box}>
           <img src={expertise_sports} alt="sports_expertise_image" />
