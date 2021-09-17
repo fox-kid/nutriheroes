@@ -145,7 +145,7 @@ function Header() {
                   duration={500}
                 >
                   <Link to={ROUTES.ROUTE_DASHBOARD}>App</Link>
-                </NavLink>{" "}
+                </NavLink>
               </li>
               <li>
                 <NavLink
