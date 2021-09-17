@@ -148,20 +148,20 @@ function Header() {
                 </NavLink>
               </li>
               <li>
-                <NavLink
+                <Link
                   to={ROUTES.ROUTE_SIGN_UP}
                   className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
                 >
                   Sign Up
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
+                <Link
                   to={ROUTES.ROUTE_LOGIN}
                   className={styles.text_capitalize}
                 >
                   Login
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </nav>
