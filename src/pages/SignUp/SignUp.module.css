@@ -1,5 +1,5 @@
 .sign_up_wrapper {
-  height: calc(100vh - 80px);
+  height: auto;
   background-image: url("../../images/home_background.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -134,7 +134,7 @@
   flex-wrap: nowrap;
   max-width: 100%;
   font-size: 16px;
-  padding: 16px 124px;
+  padding: 16px 7.75rem;
   justify-content: center;
 }
 
@@ -147,4 +147,60 @@
   color: #935870;
   text-decoration: none;
   font-weight: 600;
+}
+
+@media only screen and (max-width: 940px) {
+  .container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .text_wrapper {
+    margin-bottom: 35px;
+  }
+
+  .sign_up_btn {
+    padding: 16px 4.75rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .sign_up_btn {
+    padding: 10px 2rem;
+  }
+
+  .form_btn {
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  .text_wrapper h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .text_wrapper h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .text_wrapper p {
+    font-size: 1rem;
+  }
+
+  .sign_up_wrapper {
+    padding: 4rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .sign_up_wrapper {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .sign_up_wrapper {
+    padding: 1rem;
+  }
 }

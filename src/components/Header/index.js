@@ -1,11 +1,12 @@
 import { NavLink, Link } from "react-router-dom";
+import { useState } from "react";
+// import Scroll from "react-scroll";
 
 import ROUTES from "../../config/routes";
 import styles from "./Header.module.css";
 import logo from "../../images/logo_header.png";
 import hamburger from "../../images/hamburger_menu.png";
 import hamburger_white from "../../images/hamburger_menu_white.png";
-import { useState } from "react";
 
 function Header() {
   const [isActive, setIsActive] = useState(false);
@@ -19,7 +20,7 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <NavLink to={ROUTES.ROUTE_DASHBOARD}>Exercise</NavLink>
+              <NavLink to="#Exercise">Exercise</NavLink>
             </li>
             <li>
               <NavLink to={ROUTES.ROUTE_DASHBOARD}>Nutrition</NavLink>

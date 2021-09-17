@@ -1,0 +1,155 @@
+.login_wrapper {
+  height: auto;
+  background-image: url("../../images/home_background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 6rem 7rem;
+}
+
+.container {
+  background: #ffffff;
+  padding: 3.125rem 5.25rem;
+  box-shadow: 0px -1px 20px #0000001a;
+  border-radius: 10px;
+  display: flex;
+  max-width: 494px;
+  width: 100%;
+  flex-direction: column;
+}
+
+.form_box {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_box h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form_box label {
+  display: none;
+}
+
+.form_box input {
+  padding: 20px 40px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #efeff4;
+  background-color: #efeff4;
+}
+
+.form_box input::placeholder {
+  color: #000000;
+  opacity: 1;
+}
+
+.divider {
+  display: flex;
+  color: #c7c7cc;
+  text-align: center;
+  margin-bottom: 19px;
+}
+
+.divider:before,
+.divider:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid;
+  margin: auto;
+}
+
+.divider:before {
+  margin-right: 10px;
+}
+
+.divider:after {
+  margin-left: 10px;
+}
+
+.form_box a {
+  text-decoration: none;
+  color: black;
+}
+
+.form_btn {
+  border-radius: 5px;
+  border: 1px solid #efeff4;
+  cursor: pointer;
+  margin-bottom: 12px;
+  padding: 20px 12px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  background: #ffffff;
+  width: 100%;
+}
+
+.form_btn img {
+  margin-right: 10px;
+}
+
+.form_box input:active,
+.form_btn:active {
+  border: 1px solid #80334b;
+  box-shadow: 0px 0px 5px #00000029;
+}
+
+.login_btn {
+  background: #80334b;
+  border: 2px solid #80334b;
+  color: #ffffff;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  font-size: 16px;
+  padding: 16px 7.75rem;
+  justify-content: center;
+  margin-top: 1.875rem;
+  margin-bottom: 2.25rem;
+}
+
+.sign_up_link {
+  color: #935870;
+  text-align: center;
+}
+
+.sign_up_link a {
+  color: #935870;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 940px) {
+  .container {
+    padding: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .login_wrapper {
+    padding: 2rem 3rem;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .login_wrapper {
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .login_btn {
+    padding: 10px 2rem;
+  }
+}
