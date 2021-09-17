@@ -20,7 +20,7 @@ function Header() {
             <img src={logo} alt="nutriheroes_logo" />{" "}
           </Link>
         </NavLink>
-        <nav>
+        <nav className={`${isActive && styles.nav}`}>
           <ul>
             <li>
               <NavLink
@@ -30,6 +30,7 @@ function Header() {
                 smooth={true}
                 offset={-160}
                 duration={500}
+                onClick={() => setIsActive((isActive) => !isActive)}
               >
                 <Link to={ROUTES.ROUTE_DASHBOARD}>Exercise</Link>
               </NavLink>
@@ -42,6 +43,7 @@ function Header() {
                 smooth={true}
                 offset={-70}
                 duration={500}
+                onClick={() => setIsActive((isActive) => !isActive)}
               >
                 <Link to={ROUTES.ROUTE_DASHBOARD}>Nutrition</Link>
               </NavLink>
@@ -54,6 +56,7 @@ function Header() {
                 smooth={true}
                 offset={-70}
                 duration={500}
+                onClick={() => setIsActive((isActive) => !isActive)}
               >
                 <Link to={ROUTES.ROUTE_DASHBOARD}>Expertise</Link>
               </NavLink>
@@ -66,6 +69,7 @@ function Header() {
                 smooth={true}
                 offset={-70}
                 duration={500}
+                onClick={() => setIsActive((isActive) => !isActive)}
               >
                 <Link to={ROUTES.ROUTE_DASHBOARD}>App</Link>
               </NavLink>
@@ -74,12 +78,17 @@ function Header() {
               <Link
                 to={ROUTES.ROUTE_SIGN_UP}
                 className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
+                onClick={() => setIsActive((isActive) => !isActive)}
               >
                 Sign Up
               </Link>
             </li>
             <li>
-              <Link to={ROUTES.ROUTE_LOGIN} className={styles.text_capitalize}>
+              <Link
+                to={ROUTES.ROUTE_LOGIN}
+                className={styles.text_capitalize}
+                onClick={() => setIsActive((isActive) => !isActive)}
+              >
                 Login
               </Link>
             </li>
@@ -96,82 +105,6 @@ function Header() {
             alt="hamburger_menu"
           />
         </button>
-        {isActive ? (
-          <nav className={styles.nav}>
-            <ul>
-              <li>
-                <NavLink
-                  activeClass="active"
-                  to="exercise"
-                  spy={true}
-                  smooth={true}
-                  offset={-160}
-                  duration={500}
-                  onClick={() => setIsActive((isActive) => !isActive)}
-                >
-                  <Link to={ROUTES.ROUTE_DASHBOARD}>Exercise</Link>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  activeClass="active"
-                  to="nutrition"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  onClick={() => setIsActive((isActive) => !isActive)}
-                >
-                  <Link to={ROUTES.ROUTE_DASHBOARD}>Nutrition</Link>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  activeClass="active"
-                  to="expertise"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  onClick={() => setIsActive((isActive) => !isActive)}
-                >
-                  <Link to={ROUTES.ROUTE_DASHBOARD}>Expertise</Link>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  activeClass="active"
-                  to="app"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  onClick={() => setIsActive((isActive) => !isActive)}
-                >
-                  <Link to={ROUTES.ROUTE_DASHBOARD}>App</Link>
-                </NavLink>
-              </li>
-              <li>
-                <Link
-                  to={ROUTES.ROUTE_SIGN_UP}
-                  className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
-                  onClick={() => setIsActive((isActive) => !isActive)}
-                >
-                  Sign Up
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={ROUTES.ROUTE_LOGIN}
-                  className={styles.text_capitalize}
-                  onClick={() => setIsActive((isActive) => !isActive)}
-                >
-                  Login
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        ) : null}
       </div>
     </header>
   );
