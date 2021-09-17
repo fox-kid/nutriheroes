@@ -107,6 +107,7 @@ function Header() {
                   smooth={true}
                   offset={-160}
                   duration={500}
+                  onClick={() => setIsActive((isActive) => !isActive)}
                 >
                   <Link to={ROUTES.ROUTE_DASHBOARD}>Exercise</Link>
                 </NavLink>
@@ -119,6 +120,7 @@ function Header() {
                   smooth={true}
                   offset={-70}
                   duration={500}
+                  onClick={() => setIsActive((isActive) => !isActive)}
                 >
                   <Link to={ROUTES.ROUTE_DASHBOARD}>Nutrition</Link>
                 </NavLink>
@@ -131,6 +133,7 @@ function Header() {
                   smooth={true}
                   offset={-70}
                   duration={500}
+                  onClick={() => setIsActive((isActive) => !isActive)}
                 >
                   <Link to={ROUTES.ROUTE_DASHBOARD}>Expertise</Link>
                 </NavLink>
@@ -143,6 +146,7 @@ function Header() {
                   smooth={true}
                   offset={-70}
                   duration={500}
+                  onClick={() => setIsActive((isActive) => !isActive)}
                 >
                   <Link to={ROUTES.ROUTE_DASHBOARD}>App</Link>
                 </NavLink>
@@ -151,6 +155,7 @@ function Header() {
                 <Link
                   to={ROUTES.ROUTE_SIGN_UP}
                   className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
+                  onClick={() => setIsActive((isActive) => !isActive)}
                 >
                   Sign Up
                 </Link>
@@ -159,6 +164,7 @@ function Header() {
                 <Link
                   to={ROUTES.ROUTE_LOGIN}
                   className={styles.text_capitalize}
+                  onClick={() => setIsActive((isActive) => !isActive)}
                 >
                   Login
                 </Link>
