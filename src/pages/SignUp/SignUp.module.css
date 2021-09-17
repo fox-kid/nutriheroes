@@ -1,0 +1,150 @@
+.sign_up_wrapper {
+  height: calc(100vh - 80px);
+  background-image: url("../../images/home_background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 6rem 7rem;
+}
+
+.container {
+  background: #ffffff;
+  padding: 5.5rem;
+  box-shadow: 0px -1px 20px #0000001a;
+  border-radius: 10px;
+  display: flex;
+  max-width: 1004px;
+  width: 100%;
+}
+
+.text_wrapper h2 {
+  font-size: 2.875rem;
+  margin-bottom: 30px;
+}
+
+.text_wrapper h3 {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.text_wrapper p {
+  font-size: 1.25rem;
+}
+
+.text_wrapper {
+  flex: 1;
+}
+
+.registration_wrapper {
+  flex: 1;
+}
+
+.form_box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.625rem;
+}
+
+.email_label {
+  display: none;
+}
+
+.form_box img {
+  width: 24px;
+  height: 24px;
+}
+
+.input_text {
+  padding: 20px 40px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #efeff4;
+  position: relative;
+}
+
+.input_text::before {
+  position: absolute;
+  content: "";
+  background: url("../../images/email_logo.svg");
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  display: block;
+  background-size: cover;
+}
+
+.form_btn {
+  border-radius: 5px;
+  border: 1px solid #efeff4;
+  cursor: pointer;
+  margin-bottom: 12px;
+  padding: 20px 12px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  background: #ffffff;
+}
+
+.form_btn img {
+  margin-right: 10px;
+}
+
+.form_box input:active,
+.form_btn:active {
+  border: 1px solid #80334b;
+  box-shadow: 0px 0px 5px #00000029;
+}
+
+.terms a {
+  color: #80334b;
+  text-decoration: none;
+}
+
+.terms {
+  margin-top: 2.5rem;
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 2.8rem;
+}
+
+.terms input {
+  position: absolute;
+  right: 0;
+}
+
+/* .terms input:active,
+.terms input:focus,
+.terms input:visited {
+  background: url("../../images/checked.svg");
+} */
+
+.sign_up_btn {
+  background: #80334b;
+  border: 2px solid #80334b;
+  color: #ffffff;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  font-size: 16px;
+  padding: 16px 124px;
+  justify-content: center;
+}
+
+.login_link {
+  color: #935870;
+  text-align: center;
+}
+
+.login_link a {
+  color: #935870;
+  text-decoration: none;
+  font-weight: 600;
+}

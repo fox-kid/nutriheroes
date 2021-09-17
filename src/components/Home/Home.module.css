@@ -44,13 +44,26 @@
   transition: all 0.2s;
   display: flex;
   flex-wrap: nowrap;
-  width: 324px;
+  max-width: 324px;
+  width: 100%;
   font-size: 16px;
   padding: 16px 124px;
+  justify-content: center;
 }
 
 .btn:hover {
   border: 2px solid #935870;
   background-color: #935870;
   box-shadow: 0px 0px 10px #00000066;
+}
+
+@media only screen and (max-width: 415px) {
+  .btn {
+    padding: 14px 90px;
+  }
+
+  .home_text h1 {
+    font-size: 2.75rem;
+  }
+
 }

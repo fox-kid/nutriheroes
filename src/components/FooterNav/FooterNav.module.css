@@ -2,6 +2,7 @@
   text-transform: capitalize;
   font-size: 12px;
   margin-right: 4rem;
+  text-align: center;
 }
 
 .wrapper:last-of-type {
@@ -30,4 +31,44 @@ h5 {
 
 .wrapper a:hover {
   color: #130513;
+}
+
+.footer_btn {
+  display: none;
+}
+
+@media only screen and (max-width: 590px) {
+  .wrapper {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .footer_btn {
+    display: flex;
+    cursor: pointer;
+    border: none;
+    height: fit-content;
+    background: #ffffff;
+  }
+
+  .nav_tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .nav_tab h5 {
+    margin-right: 5px;
+    margin-bottom: 0;
+  }
+
+  .inactive {
+    display: none;
+  }
+
+  .active {
+    display: flex;
+    flex-direction: column;
+  }
 }

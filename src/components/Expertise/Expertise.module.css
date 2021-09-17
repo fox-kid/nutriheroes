@@ -44,3 +44,19 @@
 .expertise_text p {
   font-size: 1rem;
 }
+
+@media (max-width: 760px) {
+  .expertise_box {
+    flex-direction: column;
+  }
+
+  .text_wrapper {
+    padding: 20px;
+  }
+
+  .expertise_box:last-of-type {
+    flex-direction: column-reverse;
+  }
+
+
+}

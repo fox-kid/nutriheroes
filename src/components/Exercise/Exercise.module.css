@@ -84,6 +84,9 @@
 }
 
 @media (max-width: 800px) {
+  .exercise_box {
+    padding: 20px;
+  }
   .exercise_content {
     flex-direction: column;
     align-items: center;

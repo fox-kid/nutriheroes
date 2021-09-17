@@ -12,7 +12,7 @@ function Footer() {
     <footer>
       <div className={styles.empty_section}></div>
       <div className={styles.container}>
-        <div className={styles.footer_wrapper}>
+        <div className={styles.footer_content}>
           <div className={styles.footer_left_box}>
             <div className={styles.download_links}>
               <img src={app_store} alt="app_store_download_image" />
@@ -23,7 +23,7 @@ function Footer() {
                 <img src={logo} alt="nutrieheroes_logo" />
               </Link>
             </div>
-            <p>© Copyright Nutriheros 2020</p>
+            <p className={styles.copyright}>© Copyright Nutriheros 2020</p>
           </div>
           <div className={styles.footer_right_box}>
             <FooterNav
@@ -47,6 +47,13 @@ function Footer() {
               links={["facebook", "instagram", "twitter"]}
             />
           </div>
+          <div className={styles.download_links_responsive}>
+            <img src={app_store} alt="app_store_download_image" />
+            <img src={google_play} alt="google_play_download_image" />
+          </div>
+          <p className={styles.copyright_responsive}>
+            © Copyright Nutriheros 2020
+          </p>
         </div>
       </div>
     </footer>

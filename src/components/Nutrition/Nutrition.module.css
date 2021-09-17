@@ -87,5 +87,26 @@
 @media (max-width: 800px) {
   .nutrition_box {
     flex-direction: column;
+    padding: 20px;
+  }
+
+  .nutrition_text {
+    margin-bottom: 10px;
+  }
+
+  .nutrition_right img {
+    margin-left: 0;
+    max-width: 90%;
+  }
+
+  .nutrition_left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nutrition_right {
+    display: flex;
+    justify-content: center;
   }
 }
