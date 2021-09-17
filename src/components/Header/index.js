@@ -100,16 +100,52 @@ function Header() {
           <nav className={styles.nav}>
             <ul>
               <li>
-                <NavLink to={ROUTES.ROUTE_DASHBOARD}>Exercise</NavLink>
+                <NavLink
+                  activeClass="active"
+                  to="exercise"
+                  spy={true}
+                  smooth={true}
+                  offset={-160}
+                  duration={500}
+                >
+                  <Link to={ROUTES.ROUTE_DASHBOARD}>Exercise</Link>
+                </NavLink>
               </li>
               <li>
-                <NavLink to={ROUTES.ROUTE_DASHBOARD}>Nutrition</NavLink>
+                <NavLink
+                  activeClass="active"
+                  to="nutrition"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  <Link to={ROUTES.ROUTE_DASHBOARD}>Nutrition</Link>
+                </NavLink>
               </li>
               <li>
-                <NavLink to={ROUTES.ROUTE_DASHBOARD}>Expertise</NavLink>
+                <NavLink
+                  activeClass="active"
+                  to="expertise"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  <Link to={ROUTES.ROUTE_DASHBOARD}>Expertise</Link>
+                </NavLink>
               </li>
               <li>
-                <NavLink to={ROUTES.ROUTE_DASHBOARD}>App</NavLink>
+                <NavLink
+                  activeClass="active"
+                  to="app"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                >
+                  <Link to={ROUTES.ROUTE_DASHBOARD}>App</Link>
+                </NavLink>{" "}
               </li>
               <li>
                 <NavLink
