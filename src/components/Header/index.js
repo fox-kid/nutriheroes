@@ -1,4 +1,3 @@
-// import { NavLink, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Link as NavLink } from "react-scroll";
 import { Link } from "react-router-dom";
