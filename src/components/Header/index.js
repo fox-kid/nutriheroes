@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link as NavLink } from "react-scroll";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 
 import ROUTES from "../../config/routes";
 import styles from "./Header.module.css";
@@ -14,15 +14,15 @@ function Header() {
   return (
     <header>
       <div className={styles.container}>
-        <NavLink to="home" spy={true} smooth={true} offset={-70} duration={500}>
-          <Link to={ROUTES.ROUTE_DASHBOARD}>
+        <Link to="home" spy={true} smooth={true} offset={-70} duration={500}>
+          <NavLink to={ROUTES.ROUTE_DASHBOARD}>
             <img src={logo} alt="nutriheroes_logo" />{" "}
-          </Link>
-        </NavLink>
+          </NavLink>
+        </Link>
         <nav className={`${isActive && styles.nav}`}>
           <ul>
             <li>
-              <NavLink
+              <Link
                 activeClass="active"
                 to="exercise"
                 spy={true}
@@ -31,11 +31,11 @@ function Header() {
                 duration={500}
                 onClick={() => setIsActive((isActive) => !isActive)}
               >
-                <Link to={ROUTES.ROUTE_DASHBOARD}>Exercise</Link>
-              </NavLink>
+                <NavLink to={ROUTES.ROUTE_DASHBOARD}>Exercise</NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink
+              <Link
                 activeClass="active"
                 to="nutrition"
                 spy={true}
@@ -44,11 +44,11 @@ function Header() {
                 duration={500}
                 onClick={() => setIsActive((isActive) => !isActive)}
               >
-                <Link to={ROUTES.ROUTE_DASHBOARD}>Nutrition</Link>
-              </NavLink>
+                <NavLink to={ROUTES.ROUTE_DASHBOARD}>Nutrition</NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink
+              <Link
                 activeClass="active"
                 to="expertise"
                 spy={true}
@@ -57,11 +57,11 @@ function Header() {
                 duration={500}
                 onClick={() => setIsActive((isActive) => !isActive)}
               >
-                <Link to={ROUTES.ROUTE_DASHBOARD}>Expertise</Link>
-              </NavLink>
+                <NavLink to={ROUTES.ROUTE_DASHBOARD}>Expertise</NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink
+              <Link
                 activeClass="active"
                 to="app"
                 spy={true}
@@ -70,26 +70,32 @@ function Header() {
                 duration={500}
                 onClick={() => setIsActive((isActive) => !isActive)}
               >
-                <Link to={ROUTES.ROUTE_DASHBOARD}>App</Link>
+                <NavLink to={ROUTES.ROUTE_DASHBOARD}>App</NavLink>
+              </Link>
+            </li>
+            <li>
+              <NavLink
+                to={ROUTES.ROUTE_SIGN_UP}
+                className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
+                onClick={() => {
+                  setIsActive((isActive) => !isActive);
+                  window.scrollTo(0, 0);
+                }}
+              >
+                Sign Up
               </NavLink>
             </li>
             <li>
-              <Link
-                to={ROUTES.ROUTE_SIGN_UP}
-                className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
-                onClick={() => setIsActive((isActive) => !isActive)}
-              >
-                Sign Up
-              </Link>
-            </li>
-            <li>
-              <Link
+              <NavLink
                 to={ROUTES.ROUTE_LOGIN}
                 className={styles.text_capitalize}
-                onClick={() => setIsActive((isActive) => !isActive)}
+                onClick={() => {
+                  setIsActive((isActive) => !isActive);
+                  window.scrollTo(0, 0);
+                }}
               >
                 Login
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
