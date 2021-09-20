@@ -7,7 +7,16 @@ function GetStarted() {
     <section className={styles.container}>
       <div className={styles.get_started_box}>
         <p>Join the thousands of people already using Nutriheros today!</p>
-        <Link to={ROUTES.ROUTE_SIGN_UP}>
+        <Link
+          to={ROUTES.ROUTE_SIGN_UP}
+          onClick={() =>
+            window.scroll({
+              top: 80,
+              left: 0,
+              behavior: "smooth",
+            })
+          }
+        >
           <button className={styles.btn}>Get Started</button>
         </Link>
       </div>

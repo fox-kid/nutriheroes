@@ -43,18 +43,26 @@
   cursor: pointer;
   transition: all 0.2s;
   display: flex;
-  flex-wrap: nowrap;
   max-width: 324px;
   width: 100%;
   font-size: 16px;
   padding: 16px 124px;
   justify-content: center;
+  white-space: nowrap;
 }
 
 .btn:hover {
   border: 2px solid #935870;
   background-color: #935870;
   box-shadow: 0px 0px 10px #00000066;
+}
+
+@media only screen and (max-width: 480px) {
+  .home_content a {
+    position: fixed;
+    top: 80vh;
+    z-index: 3;
+  }
 }
 
 @media only screen and (max-width: 415px) {
@@ -65,5 +73,4 @@
   .home_text h1 {
     font-size: 2.75rem;
   }
-
 }

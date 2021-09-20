@@ -5,7 +5,7 @@ import google_play from "../../images/google_play_download.svg";
 
 function App() {
   return (
-    <section className={styles.container} title="App" dark={true} id="app">
+    <section className={styles.container} title="App" id="app">
       <div className={styles.app_img_wrapper}>
         <img src={mobile_app} alt="mobile_app_image" />
       </div>

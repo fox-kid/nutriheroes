@@ -73,6 +73,11 @@
   line-height: 1.25;
 }
 
+.nutrition_right {
+  display: flex;
+  align-items: flex-start;
+}
+
 .nutrition_right img {
   max-width: 494px;
   margin-left: 6.25rem;
@@ -84,10 +89,28 @@
   width: fit-content;
 }
 
-@media (max-width: 800px) {
+@media only screen and (max-width: 1004px) {
+  .nutrition_right img {
+    margin-left: 3rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+.nutrition_right {
+  max-width: 450px;
+}
+
+  .nutrition_right img {
+    margin-left: 1rem;
+    width: -webkit-fill-available;
+  }
+}
+
+@media only screen and (max-width: 800px) {
   .nutrition_box {
     flex-direction: column;
     padding: 20px;
+    align-items: center;
   }
 
   .nutrition_text {
@@ -96,7 +119,7 @@
 
   .nutrition_right img {
     margin-left: 0;
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .nutrition_left {

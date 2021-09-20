@@ -44,7 +44,19 @@ function SignUp() {
             <button className={styles.sign_up_btn}>Get Started</button>
           </form>
           <p className={styles.login_link}>
-            Already have an account? <Link to={ROUTES.ROUTE_LOGIN}>Login</Link>
+            Already have an account?{" "}
+            <Link
+              to={ROUTES.ROUTE_LOGIN}
+              onClick={() =>
+                window.scroll({
+                  top: 40,
+                  left: 0,
+                  behavior: "smooth",
+                })
+              }
+            >
+              Login
+            </Link>
           </p>
         </div>
       </div>

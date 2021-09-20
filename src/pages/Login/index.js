@@ -43,7 +43,19 @@ function Login() {
           <button className={styles.login_btn}>Login</button>
         </form>
         <p className={styles.sign_up_link}>
-          Not a member yet? <Link to={ROUTES.ROUTE_SIGN_UP}>Register</Link>
+          Not a member yet?{" "}
+          <Link
+            to={ROUTES.ROUTE_SIGN_UP}
+            onClick={() =>
+              window.scroll({
+                top: 40,
+                left: 0,
+                behavior: "smooth",
+              })
+            }
+          >
+            Register
+          </Link>
         </p>
       </div>
     </main>

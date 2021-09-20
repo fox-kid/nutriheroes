@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
+import Scrollspy from "react-scrollspy";
 
 import ROUTES from "../../config/routes";
 import styles from "./Header.module.css";
@@ -21,82 +22,99 @@ function Header() {
         </Link>
         <nav className={`${isActive && styles.nav}`}>
           <ul>
-            <li>
-              <Link
-                activeClass="active"
-                to="exercise"
-                spy={true}
-                smooth={true}
-                offset={-160}
-                duration={500}
-                onClick={() => setIsActive((isActive) => !isActive)}
-              >
-                <NavLink to={ROUTES.ROUTE_DASHBOARD}>Exercise</NavLink>
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="active"
-                to="nutrition"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                onClick={() => setIsActive((isActive) => !isActive)}
-              >
-                <NavLink to={ROUTES.ROUTE_DASHBOARD}>Nutrition</NavLink>
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="active"
-                to="expertise"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                onClick={() => setIsActive((isActive) => !isActive)}
-              >
-                <NavLink to={ROUTES.ROUTE_DASHBOARD}>Expertise</NavLink>
-              </Link>
-            </li>
-            <li>
-              <Link
-                activeClass="active"
-                to="app"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                onClick={() => setIsActive((isActive) => !isActive)}
-              >
-                <NavLink to={ROUTES.ROUTE_DASHBOARD}>App</NavLink>
-              </Link>
-            </li>
-            <li>
-              <NavLink
-                to={ROUTES.ROUTE_SIGN_UP}
-                className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
-                onClick={() => {
-                  setIsActive((isActive) => !isActive);
-                  window.scrollTo(0, 0);
-                }}
-              >
-                Sign Up
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to={ROUTES.ROUTE_LOGIN}
-                className={styles.text_capitalize}
-                onClick={() => {
-                  setIsActive((isActive) => !isActive);
-                  window.scrollTo(0, 0);
-                }}
-              >
-                Login
-              </NavLink>
-            </li>
+            <Scrollspy
+              items={["home", "exercise", "nutrition", "expertise", "app"]}
+              currentClassName={styles.isCurrent}
+              offset={-150}
+            >
+              <li className={styles.hidden_nav} hidden>
+                Home
+              </li>
+              <li>
+                <Link
+                  activeClass="active"
+                  to="exercise"
+                  spy={true}
+                  smooth={true}
+                  offset={-160}
+                  duration={500}
+                  onClick={() => setIsActive((isActive) => !isActive)}
+                >
+                  <NavLink to={ROUTES.ROUTE_DASHBOARD}>Exercise</NavLink>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass="active"
+                  to="nutrition"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  onClick={() => setIsActive((isActive) => !isActive)}
+                >
+                  <NavLink to={ROUTES.ROUTE_DASHBOARD}>Nutrition</NavLink>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass="active"
+                  to="expertise"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  onClick={() => setIsActive((isActive) => !isActive)}
+                >
+                  <NavLink to={ROUTES.ROUTE_DASHBOARD}>Expertise</NavLink>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  activeClass="active"
+                  to="app"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  onClick={() => setIsActive((isActive) => !isActive)}
+                >
+                  <NavLink to={ROUTES.ROUTE_DASHBOARD}>App</NavLink>
+                </Link>
+              </li>
+              <li>
+                <NavLink
+                  to={ROUTES.ROUTE_SIGN_UP}
+                  className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
+                  onClick={() => {
+                    setIsActive((isActive) => !isActive);
+                    window.scroll({
+                      top: 80,
+                      left: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                >
+                  Sign Up
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to={ROUTES.ROUTE_LOGIN}
+                  className={styles.text_capitalize}
+                  onClick={() => {
+                    setIsActive((isActive) => !isActive);
+                    window.scroll({
+                      top: 80,
+                      left: 0,
+                      behavior: "smooth",
+                    });
+                  }}
+                >
+                  Login
+                </NavLink>
+              </li>
+            </Scrollspy>
           </ul>
         </nav>
         <button

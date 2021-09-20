@@ -3,12 +3,7 @@ import healthy_img from "../../images/healthy_img.png";
 
 function Nutrition() {
   return (
-    <section
-      className={styles.container}
-      title="Nutrition"
-      dark={true}
-      id="nutrition"
-    >
+    <section className={styles.container} title="Nutrition" id="nutrition">
       <div className={styles.nutrition_box}>
         <div className={styles.nutrition_left}>
           <div className={styles.nutrition_title}>Nutrition</div>
