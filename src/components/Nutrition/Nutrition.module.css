@@ -157,6 +157,7 @@
 
   .nutrition_img img {
     width: 90%;
+    margin-top: 0;
   }
 
   .tab_item {
