@@ -29,7 +29,7 @@
 }
 
 .tab_item {
-  margin-right: 1px;
+  margin-right: 25px;
   padding: 10px 20px;
   position: relative;
 }
@@ -37,13 +37,6 @@
 .tab_item:last-of-type {
   margin-right: 0;
 }
-
-/* .tab_link {
-  text-decoration: none;
-  color: black;
-  position: relative;
-  padding: 10px 20px;
-} */
 
 .tab_item::after {
   display: inline-block;

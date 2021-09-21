@@ -25,7 +25,7 @@ function Header() {
             <Scrollspy
               items={["home", "exercise", "nutrition", "expertise", "app"]}
               currentClassName={styles.isCurrent}
-              offset={-150}
+              offset={-130}
             >
               <li className={styles.hidden_nav} hidden>
                 Home

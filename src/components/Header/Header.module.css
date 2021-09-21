@@ -48,7 +48,7 @@ nav li:last-of-type {
 nav a {
   text-decoration: none;
   color: #000000;
-  padding: 0.5rem 1rem;
+  padding: 4px;
   text-transform: uppercase;
   position: relative;
   cursor: pointer;
@@ -56,6 +56,7 @@ nav a {
 
 .text_capitalize {
   text-transform: capitalize;
+  padding: 5px 10px;
 }
 
 nav a::after {
@@ -108,7 +109,7 @@ nav a:hover::after {
 .isCurrent::after {
   display: inline-block;
   content: "";
-  bottom: -0.5rem;
+  bottom: -4px;
   left: 0;
   width: 100%;
   height: 2px;

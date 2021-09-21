@@ -1,6 +1,6 @@
+import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
 import styles from "./Exercise.module.css";
 import gym_img from "../../images/gym_img.png";
-import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
 
 function Exercise() {
   return (
