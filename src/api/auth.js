@@ -15,7 +15,7 @@ async function signInUser(phoneNumberOrEmail, password) {
       },
     }
   );
-  console.log(response.data);
+
   return response.data;
 }
 
