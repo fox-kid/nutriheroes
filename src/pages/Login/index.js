@@ -39,7 +39,7 @@ function Login() {
     } else {
       setLoggenIn(false);
     }
-  });
+  }, []);
 
   return loggedIn ? (
     <div>Logged In </div>
