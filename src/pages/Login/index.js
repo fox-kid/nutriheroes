@@ -1,45 +1,38 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import styles from "./Login.module.css";
 import google_logo from "../../images/google_logo.svg";
 import facebook_logo from "../../images/facebook_logo.svg";
 import ROUTES from "../../config/routes";
-import { signInUser } from "../../api/auth";
-
-async function login(username, password) {
-  const response = await signInUser(username, password);
-  const token = response.data;
-  return token.accessToken;
-}
+import { login } from "../../reducers/reducer";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-  const [token, setToken] = useState("");
-  const [loggedIn, setLoggenIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   function handleSignIn(e) {
     e.preventDefault();
     login(username, password)
-      .then((res) => setToken(res))
+      .then(() => setLoggedIn(true))
       .catch(() => setError(true));
   }
 
-  useEffect(() => {
-    if (token) {
-      localStorage.setItem("accessToken", token);
-    } else {
-      localStorage.removeItem("accessToken");
-    }
+  // useEffect(() => {
+  //   if (token) {
+  //     localStorage.setItem("accessToken", token);
+  //   } else {
+  //     localStorage.removeItem("accessToken");
+  //   }
 
-    if (localStorage.getItem("accessToken") !== null) {
-      setLoggenIn(true);
-    } else {
-      setLoggenIn(false);
-    }
-  }, []);
+  //   if (localStorage.getItem("accessToken") !== null) {
+  //     setLoggenIn(true);
+  //   } else {
+  //     setLoggenIn(false);
+  //   }
+  // }, []);
 
   return loggedIn ? (
     <div>Logged In </div>
