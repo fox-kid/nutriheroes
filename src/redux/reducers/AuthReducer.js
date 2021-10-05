@@ -21,7 +21,7 @@ export default (state = initialState, action) => {
       };
     }
     case AUTH_LOGOUT: {
-      localStorage.removeItem("accessToken");
+      localStorage.removeItem("token");
       return {
         ...state,
         isLoggedIn: false,
