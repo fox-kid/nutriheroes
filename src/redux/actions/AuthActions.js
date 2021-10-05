@@ -1,11 +1,12 @@
 import { signInUser } from "../../api/auth";
 import { AUTH_LOGIN_SUCCESS, AUTH_LOGIN_ERROR, AUTH_LOGOUT } from "../types";
 
-export const login = (username, password) => {
+export const login = (username, password, callback) => {
   return (dispatch) => {
     signInUser(username, password)
       .then((res) => {
         dispatch(loginSuccess(res));
+        callback();
       })
       .catch(() => dispatch(loginError()));
   };

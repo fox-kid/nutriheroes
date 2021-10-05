@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
-import { Redirect } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import styles from "./Login.module.css";
 import google_logo from "../../images/google_logo.svg";
@@ -12,20 +11,20 @@ import { login } from "../../redux/actions/AuthActions";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const dispatch = useDispatch();
 
-  const authObj = useSelector((state) => state);
-  const isLoggedIn = authObj.AuthReducer.isLoggedIn;
-
   function handleSignIn(e) {
     e.preventDefault();
-    dispatch(login(username, password));
+    dispatch(
+      login(username, password, () => {
+        history.push(ROUTES.ROUTE_DASHBOARD);
+      })
+    );
   }
 
-  return isLoggedIn ? (
-    <Redirect to={ROUTES.ROUTE_DASHBOARD} />
-  ) : (
+  return (
     <main className={styles.login_wrapper}>
       <div className={styles.container}>
         <form className={styles.form_box}>

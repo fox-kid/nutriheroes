@@ -8,18 +8,17 @@ export default [
     path: ROUTES.ROUTE_DASHBOARD,
     exact: true,
     page: Dashboard,
-    protected: false,
   },
   {
     path: ROUTES.ROUTE_SIGN_UP,
     exact: false,
     page: SignUp,
-    protected: false,
+    authPage: true,
   },
   {
     path: ROUTES.ROUTE_LOGIN,
     exact: false,
     page: Login,
-    protected: false,
+    authPage: true,
   },
 ];
