@@ -15,7 +15,8 @@
     "react-scrollspy": "^3.4.3",
     "react-scrollspy-nav": "^1.2.4",
     "react-tabs": "^3.2.2",
-    "redux": "^4.1.1"
+    "redux": "^4.1.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "eslint": "^7.18.0",

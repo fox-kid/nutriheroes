@@ -1,46 +1,34 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import styles from "./Login.module.css";
 import google_logo from "../../images/google_logo.svg";
 import facebook_logo from "../../images/facebook_logo.svg";
-import ROUTES from "../../config/routes";
-import { login } from "../../reducers/reducer";
+import ROUTES from "../../constants/routes";
+import { login } from "../../redux/actions/AuthActions";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const authObj = useSelector((state) => state);
+  const isLoggedIn = authObj.AuthReducer.isLoggedIn;
 
   function handleSignIn(e) {
     e.preventDefault();
-    login(username, password)
-      .then(() => setLoggedIn(true))
-      .catch(() => setError(true));
+    dispatch(login(username, password));
   }
 
-  // useEffect(() => {
-  //   if (token) {
-  //     localStorage.setItem("accessToken", token);
-  //   } else {
-  //     localStorage.removeItem("accessToken");
-  //   }
-
-  //   if (localStorage.getItem("accessToken") !== null) {
-  //     setLoggenIn(true);
-  //   } else {
-  //     setLoggenIn(false);
-  //   }
-  // }, []);
-
-  return loggedIn ? (
-    <div>Logged In </div>
+  return isLoggedIn ? (
+    <Redirect to={ROUTES.ROUTE_DASHBOARD} />
   ) : (
     <main className={styles.login_wrapper}>
       <div className={styles.container}>
         <form className={styles.form_box}>
-          {error && <div>Something went wrong. Please, try again.</div>}
           <h1>Welcome back! Enter your details below</h1>
           <label htmlFor="username">Username:</label>
           <input

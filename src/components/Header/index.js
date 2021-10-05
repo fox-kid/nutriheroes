@@ -2,15 +2,27 @@ import { useState } from "react";
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
 import Scrollspy from "react-scrollspy";
+import { useDispatch, useSelector } from "react-redux";
 
-import ROUTES from "../../config/routes";
+import ROUTES from "../../constants/routes";
 import styles from "./Header.module.css";
 import logo from "../../images/logo_header.png";
 import hamburger from "../../images/hamburger_menu.png";
 import hamburger_white from "../../images/hamburger_menu_white.png";
+import { logout } from "../../redux/actions/AuthActions";
 
 function Header() {
   const [isActive, setIsActive] = useState(false);
+
+  const authObj = useSelector((state) => state);
+  const isLoggedIn = authObj.AuthReducer.isLoggedIn;
+
+  const dispatch = useDispatch();
+
+  function handleLogOut(e) {
+    e.preventDefault();
+    dispatch(logout());
+  }
 
   return (
     <header>
@@ -81,38 +93,51 @@ function Header() {
                 <NavLink to={ROUTES.ROUTE_DASHBOARD}>App</NavLink>
               </Link>
             </li>
-            <li className={styles.reg_btn}>
-              <NavLink
-                to={ROUTES.ROUTE_SIGN_UP}
-                className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
-                onClick={() => {
-                  setIsActive((isActive) => !isActive);
-                  window.scroll({
-                    top: 80,
-                    left: 0,
-                    behavior: "smooth",
-                  });
-                }}
-              >
-                Sign Up
-              </NavLink>
-            </li>
-            <li className={styles.reg_btn}>
-              <NavLink
-                to={ROUTES.ROUTE_LOGIN}
-                className={styles.text_capitalize}
-                onClick={() => {
-                  setIsActive((isActive) => !isActive);
-                  window.scroll({
-                    top: 80,
-                    left: 0,
-                    behavior: "smooth",
-                  });
-                }}
-              >
-                Login
-              </NavLink>
-            </li>
+            {isLoggedIn ? (
+              <li className={styles.logout_btn}>
+                <button
+                  className={`${styles.btn} ${styles.text_capitalize}`}
+                  onClick={handleLogOut}
+                >
+                  Log Out
+                </button>
+              </li>
+            ) : (
+              <>
+                <li className={styles.reg_btn}>
+                  <NavLink
+                    to={ROUTES.ROUTE_SIGN_UP}
+                    className={`${styles.btn} ${styles.text_capitalize} ${styles.after_light}`}
+                    onClick={() => {
+                      setIsActive((isActive) => !isActive);
+                      window.scroll({
+                        top: 80,
+                        left: 0,
+                        behavior: "smooth",
+                      });
+                    }}
+                  >
+                    Sign Up
+                  </NavLink>
+                </li>
+                <li className={styles.reg_btn}>
+                  <NavLink
+                    to={ROUTES.ROUTE_LOGIN}
+                    className={styles.text_capitalize}
+                    onClick={() => {
+                      setIsActive((isActive) => !isActive);
+                      window.scroll({
+                        top: 80,
+                        left: 0,
+                        behavior: "smooth",
+                      });
+                    }}
+                  >
+                    Login
+                  </NavLink>
+                </li>
+              </>
+            )}
           </Scrollspy>
         </nav>
         <button

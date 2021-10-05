@@ -1,28 +1,29 @@
-import ROUTES from "./config/routes.js";
 import { Route, Switch } from "react-router-dom";
 
-import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ROUTES_CONFIG from "./config/routes";
 
 function Routes() {
   return (
     <>
       <Header />
       <Switch>
-        <Route path={ROUTES.ROUTE_DASHBOARD} exact>
-          <Dashboard />
-        </Route>
-        <Route path={ROUTES.ROUTE_LOGIN}>
-          <Login />
-        </Route>
-        <Route path={ROUTES.ROUTE_SIGN_UP}>
-          <SignUp />
-        </Route>
+        {ROUTES_CONFIG.map((route) => {
+          const Page = route.page;
+
+          return (
+            <Route
+              key={route.path}
+              path={route.path}
+              exact={route.exact}
+              protected={route.protected}
+              render={(props) => <Page {...props} />}
+            />
+          );
+        })}
         <Route>
-          <div>Not Found</div>
+          <h1>Not Found</h1>
         </Route>
       </Switch>
       <Footer />

@@ -1,17 +1,24 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import styles from "./SignUp.module.css";
 import google_logo from "../../images/google_logo.svg";
 import facebook_logo from "../../images/facebook_logo.svg";
-import ROUTES from "../../config/routes";
+import ROUTES from "../../constants/routes";
 
 function SignUp() {
   const [user, setUser] = useState({
     email: "",
   });
 
-  return (
+  const authObj = useSelector((state) => state);
+  const isLoggedIn = authObj.AuthReducer.isLoggedIn;
+
+  return isLoggedIn ? (
+    <Redirect to={ROUTES.ROUTE_DASHBOARD} />
+  ) : (
     <main className={styles.sign_up_wrapper}>
       <div className={styles.container}>
         <div className={styles.text_wrapper}>

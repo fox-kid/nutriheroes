@@ -1,5 +1,25 @@
-const ROUTE_DASHBOARD = "/";
-const ROUTE_LOGIN = "/login";
-const ROUTE_SIGN_UP = "/signup";
+import ROUTES from "../constants/routes";
+import Dashboard from "../pages/Dashboard";
+import SignUp from "../pages/SignUp";
+import Login from "../pages/Login";
 
-export default { ROUTE_DASHBOARD, ROUTE_LOGIN, ROUTE_SIGN_UP };
+export default [
+  {
+    path: ROUTES.ROUTE_DASHBOARD,
+    exact: true,
+    page: Dashboard,
+    protected: false,
+  },
+  {
+    path: ROUTES.ROUTE_SIGN_UP,
+    exact: false,
+    page: SignUp,
+    protected: false,
+  },
+  {
+    path: ROUTES.ROUTE_LOGIN,
+    exact: false,
+    page: Login,
+    protected: false,
+  },
+];
