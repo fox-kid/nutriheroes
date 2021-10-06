@@ -14,8 +14,7 @@ import { logout } from "../../redux/actions/AuthActions";
 function Header() {
   const [isActive, setIsActive] = useState(false);
 
-  const authObj = useSelector((state) => state);
-  const isLoggedIn = authObj.AuthReducer.isLoggedIn;
+  const { isLoggedIn } = useSelector((state) => state.AuthReducer);
 
   const dispatch = useDispatch();
 
