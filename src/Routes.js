@@ -14,7 +14,6 @@ function Routes() {
       <Switch>
         {ROUTES_CONFIG.map((route) => {
           const Page = route.page;
-          console.log(isLoggedIn, route.authPage);
 
           if (isLoggedIn && route.authPage) {
             return;

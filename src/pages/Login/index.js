@@ -22,6 +22,15 @@ function Login() {
         history.push(ROUTES.ROUTE_DASHBOARD);
       })
     );
+    setTimeout(
+      () =>
+        window.scroll({
+          top: 80,
+          left: 0,
+          behavior: "smooth",
+        }),
+      1000
+    );
   }
 
   return (

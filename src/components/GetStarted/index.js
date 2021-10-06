@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./GetStarted.module.css";
-import ROUTES from "../../config/routes";
+import ROUTES from "../../constants/routes";
 
 function GetStarted() {
   return (
